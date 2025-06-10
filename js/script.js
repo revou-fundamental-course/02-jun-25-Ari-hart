@@ -1,40 +1,22 @@
-function validateMessageForm() {
-        let valid = true;
+  function updateTime() {
+    const now = new Date();
+    document.getElementById("currentTime").innerText = now.toLocaleString();
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
 
-        const name = document.getElementById("name").value.trim();
-        const birthdate = document.getElementById("birthdate").value.trim();
-        const gender = document.querySelector('input[name="gender"]:checked');
-        const messageText = document.getElementById("messageText").value.trim();
+  function validateForm() {
+    const name = document.getElementById("name").value;
+    const dob = document.getElementById("dob").value;
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const message = document.getElementById("message").value;
 
-        const nameError = document.getElementById("nameError");
-        const birthdateError = document.getElementById("birthdateError");
-        const genderError = document.getElementById("genderError");
-        const messageTextError = document.getElementById("messageTextError");
-
-        nameError.textContent = "";
-        birthdateError.textContent = "";
-        genderError.textContent = "";
-        messageTextError.textContent = "";
-
-        if (name === "") {
-            nameError.textContent = "Nama wajib diisi.";
-            valid = false;
-        }
-
-        if (birthdate === "") {
-            birthdateError.textContent = "Tanggal lahir wajib diisi.";
-            valid = false;
-        }
-
-        if (!gender) {
-            genderError.textContent = "Silakan pilih jenis kelamin.";
-            valid = false;
-        }
-
-        if (messageText.length < 10) {
-            messageTextError.textContent = "Pesan minimal 10 karakter.";
-            valid = false;
-        }
-
-        return valid;
+    if (!name || !dob || !gender || !message) {
+      alert("Please fill in all fields.");
+      return false;
     }
+
+    const output = `Name: ${name}<br>Date of Birth: ${dob}<br>Gender: ${gender.value}<br>Message: ${message}`;
+    document.getElementById("output").innerHTML = output;
+    return false;
+  }

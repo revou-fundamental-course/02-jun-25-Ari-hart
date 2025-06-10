@@ -11,69 +11,63 @@
 </head>
 <body>
 
-    <!-- Header Content -->
-    <header>
-    
 <header>
-    <div class="navbar">
-        <div>
-            <img src="https://via.placeholder.com/50x50?text=Logo" alt="Logo Sekolah">
-        </div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#profile">Our Profile</a>
-            <a href="#achievement">Achievement</a>
-            <a href="#message">Message Us</a>
-        </nav>
-    </div>
-    <div class="tagline">
-        Menjadi Sekolah Unggulan dalam Pendidikan Berkualitas
-    </div>
+  <div class="logo">School Logo</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Our Profile</a>
+    <a href="#">Achievement</a>
+    <a href="#footer">Message Us</a>
+  </nav>
 </header>
 
-<section id="home">
-    <h2>Selamat Datang di Sekolah Maju Jaya</h2>
-    <p>Kami menyediakan lingkungan belajar yang mendukung serta tenaga pengajar profesional. Kami percaya bahwa setiap siswa memiliki potensi luar biasa untuk berkembang.</p>
-</section>
+<div class="content">
+  <div id="greeting"></div>
+  <script>
+    const userName = prompt("Please enter your name:");
+    if (userName) {
+      document.getElementById("greeting").innerHTML = `<h2>Hi, ${userName}</h2>`;
+    }
+  </script>
+</div>
 
-<section id="profile">
-    <h2>Our Profile</h2>
-    <p>Sekolah Maju Jaya adalah institusi pendidikan yang berkomitmen untuk mencetak generasi penerus bangsa yang cerdas, berakhlak, dan berdaya saing global. Kami menyediakan berbagai program unggulan akademik dan non-akademik.</p>
-</section>
+<div class="banner">
+  <div class="banner-slide">
+    <h3>Vision:</h3>
+    <p>To be a leading school in academic excellence and character development.</p>
+    <h3>Mission:</h3>
+    <p>To provide quality education that empowers students to be responsible global citizens.</p>
+    <h3>Achievements:</h3>
+    <p>National Science Olympiad Winner, Regional Debate Champion, Top Ranking School Award 2024.</p>
+  </div>
+</div>
 
-<section id="achievement">
-    <h2>Achievement</h2>
-    <ul>
-        <li>Juara 1 Olimpiade Sains Tingkat Nasional 2024</li>
-        <li>Peraih Sekolah Adiwiyata Mandiri 2023</li>
-        <li>Tim Futsal Juara Regional 2024</li>
-    </ul>
-</section>
+<footer id="footer">
+  <div class="footer-col">
+    <h3>Message Us</h3>
+    <form id="messageForm" onsubmit="return validateForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
 
-<footer id="message">
-    <h2>Message Us</h2>
-    <form onsubmit="return validateMessageForm()">
-        <label for="name">Nama:</label>
-        <input type="text" id="name" name="name">
-        <div id="nameError" class="error"></div>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob">
 
-        <label for="birthdate">Tanggal Lahir:</label>
-        <input type="date" id="birthdate" name="birthdate">
-        <div id="birthdateError" class="error"></div>
+      <label>Gender:</label>
+      <label class="gender-option"><input type="radio" name="gender" value="Male"> Male</label>
+      <label class="gender-option"><input type="radio" name="gender" value="Female"> Female</label>
 
-        <label>Jenis Kelamin:</label>
-        <div class="radio-group">
-            <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
-            <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
-        </div>
-        <div id="genderError" class="error"></div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
 
-        <label for="messageText">Isi Pesan:</label>
-        <textarea id="messageText" name="messageText" rows="5"></textarea>
-        <div id="messageTextError" class="error"></div>
-
-        <button type="submit">Kirim</button>
+      <input type="submit" value="Send">
     </form>
+  </div>
+  <div class="footer-col">
+    <h3>Current Time</h3>
+    <div id="currentTime"></div>
+    <h3>Your Message</h3>
+    <div id="output"></div>
+  </div>
 </footer>
 
 </body>
