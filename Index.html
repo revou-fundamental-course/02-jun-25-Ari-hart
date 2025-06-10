@@ -22,14 +22,10 @@
 </header>
 
 <div class="content">
-  <div class="welcome-message">Selamat Datang di Website Kami</div>
-  <div id="greeting"></div>
-  <script>
-    const userName = prompt("Silakan masukkan nama Anda:");
-    if (userName) {
-      document.getElementById("greeting").innerHTML = `<div class='greeting-name'>Hi, ${userName}</div>`;
-    }
-  </script>
+  <div class="welcome-container" id="welcomeContainer" style="display: none;">
+    <div class="welcome-message">Selamat Datang di Website Kami</div>
+    <div id="greeting"></div>
+  </div>
 </div>
 
 <div class="banner">

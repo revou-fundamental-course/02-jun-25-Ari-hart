@@ -9,8 +9,13 @@
       50% { transform: translateX(-100%); }
     }
     .content { padding: 20px; font-size: 18px; text-align: center; }
-    .welcome-message { font-size: 24px; font-weight: bold; color: #0066cc; margin-bottom: 10px; }
-    .greeting-name { font-size: 22px; font-weight: bold; color: #ff6600; background-color: #fff3cd; padding: 10px; border-radius: 10px; display: inline-block; }
+    .welcome-container { background: linear-gradient(to right, #ffecd2, #fcb69f); padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .welcome-message { font-size: 28px; font-weight: bold; color: #2c3e50; margin-bottom: 15px; animation: fadeIn 2s ease-in-out; }
+    .greeting-name { font-size: 24px; font-weight: bold; color: #ffffff; background-color: #ff6600; padding: 12px 20px; border-radius: 10px; display: inline-block; animation: fadeIn 2s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     footer { display: flex; background-color: #f8f8f8; padding: 20px; border-top: 2px solid #ccc; }
     .footer-col { flex: 1; border: 1px solid #ccc; margin: 0 10px; padding: 10px; box-sizing: border-box; }
     label { display: block; margin: 10px 0 5px; }

@@ -20,3 +20,12 @@
     document.getElementById("output").innerHTML = output;
     return false;
   }
+
+  // Show welcome and ask for name
+  window.onload = function() {
+    const userName = prompt("Selamat Datang di Website Kami!\nSilakan masukkan nama Anda:");
+    if (userName) {
+      document.getElementById("greeting").innerHTML = `<div class='greeting-name'>Hi, ${userName}</div>`;
+      document.getElementById("welcomeContainer").style.display = "block";
+    }
+  }
