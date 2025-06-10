@@ -1,3 +1,7 @@
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("enterBtn").addEventListener("click", enterWebsite);
+  });
+
   function updateTime() {
     const now = new Date();
     document.getElementById("currentTime").innerText = now.toLocaleString();
