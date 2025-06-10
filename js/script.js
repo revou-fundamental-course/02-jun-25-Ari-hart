@@ -21,11 +21,13 @@
     return false;
   }
 
-  // Show welcome and ask for name
-  window.onload = function() {
-    const userName = prompt("Selamat Datang di Website Kami!\nSilakan masukkan nama Anda:");
+  function enterWebsite() {
+    const userName = document.getElementById("userNameInput").value.trim();
     if (userName) {
+      document.getElementById("intro-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
       document.getElementById("greeting").innerHTML = `<div class='greeting-name'>Hi, ${userName}</div>`;
-      document.getElementById("welcomeContainer").style.display = "block";
+    } else {
+      alert("Silakan masukkan nama Anda terlebih dahulu.");
     }
   }

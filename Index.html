@@ -11,61 +11,71 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">School Logo</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Our Profile</a>
-    <a href="#">Achievement</a>
-    <a href="#footer">Message Us</a>
-  </nav>
-</header>
-
-<div class="content">
-  <div class="welcome-container" id="welcomeContainer" style="display: none;">
-    <div class="welcome-message">Selamat Datang di Website Kami</div>
-    <div id="greeting"></div>
+<div id="intro-screen">
+  <h1>Selamat Datang di Website Kami</h1>
+  <div id="namePrompt">
+    <input type="text" id="userNameInput" placeholder="Masukkan Nama Anda">
+    <button onclick="enterWebsite()">Masuk</button>
   </div>
 </div>
 
-<div class="banner">
-  <div class="banner-slide">
-    <h3>Vision:</h3>
-    <p>To be a leading school in academic excellence and character development.</p>
-    <h3>Mission:</h3>
-    <p>To provide quality education that empowers students to be responsible global citizens.</p>
-    <h3>Achievements:</h3>
-    <p>National Science Olympiad Winner, Regional Debate Champion, Top Ranking School Award 2024.</p>
+<div id="main-content">
+  <header>
+    <div class="logo">School Logo</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Our Profile</a>
+      <a href="#">Achievement</a>
+      <a href="#footer">Message Us</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <div class="welcome-container" id="welcomeContainer">
+      <div class="welcome-message">Selamat Datang di Website Kami</div>
+      <div id="greeting"></div>
+    </div>
   </div>
+
+  <div class="banner">
+    <div class="banner-slide">
+      <h3>Vision:</h3>
+      <p>To be a leading school in academic excellence and character development.</p>
+      <h3>Mission:</h3>
+      <p>To provide quality education that empowers students to be responsible global citizens.</p>
+      <h3>Achievements:</h3>
+      <p>National Science Olympiad Winner, Regional Debate Champion, Top Ranking School Award 2024.</p>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="footer-col">
+      <h3>Message Us</h3>
+      <form id="messageForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label>Gender:</label>
+        <label class="gender-option"><input type="radio" name="gender" value="Male"> Male</label>
+        <label class="gender-option"><input type="radio" name="gender" value="Female"> Female</label>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+
+        <input type="submit" value="Send">
+      </form>
+    </div>
+    <div class="footer-col">
+      <h3>Current Time</h3>
+      <div id="currentTime"></div>
+      <h3>Your Message</h3>
+      <div id="output"></div>
+    </div>
+  </footer>
 </div>
-
-<footer id="footer">
-  <div class="footer-col">
-    <h3>Message Us</h3>
-    <form id="messageForm" onsubmit="return validateForm()">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" name="dob">
-
-      <label>Gender:</label>
-      <label class="gender-option"><input type="radio" name="gender" value="Male"> Male</label>
-      <label class="gender-option"><input type="radio" name="gender" value="Female"> Female</label>
-
-      <label for="message">Message:</label>
-      <textarea id="message" name="message"></textarea>
-
-      <input type="submit" value="Send">
-    </form>
-  </div>
-  <div class="footer-col">
-    <h3>Current Time</h3>
-    <div id="currentTime"></div>
-    <h3>Your Message</h3>
-    <div id="output"></div>
-  </div>
-</footer>
 
 </body>
 </html>
