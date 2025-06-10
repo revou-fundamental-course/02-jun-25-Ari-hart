@@ -22,11 +22,12 @@
 </header>
 
 <div class="content">
+  <div class="welcome-message">Selamat Datang di Website Kami</div>
   <div id="greeting"></div>
   <script>
-    const userName = prompt("Please enter your name:");
+    const userName = prompt("Silakan masukkan nama Anda:");
     if (userName) {
-      document.getElementById("greeting").innerHTML = `<h2>Hi, ${userName}</h2>`;
+      document.getElementById("greeting").innerHTML = `<div class='greeting-name'>Hi, ${userName}</div>`;
     }
   </script>
 </div>
