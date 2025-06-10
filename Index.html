@@ -8,79 +8,250 @@
     <!--CSS External-->
     <link rel="stylesheet" href="css\style.css"
 
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
 </head>
 <body>
 
     <!-- Header Content -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#profile">Profil Kami</a></li>
-                <li><a href="#achievement">Prestasi</a></li>
-                <li><a href="#contact">Hubungi Kami</a></li>
-            </ul>
-        </nav>
-    </header>
     
-    <!-- Main Content -->
-    <main>
-        <section id="home" class="banner">
-        <h1>Selamat Datang di Sekolah Kami</h1>
-        <p>Hi <span id="userName">Tamu</span>!</p>
-        <label for="nameInput">Masukkan Nama Anda untuk menyapa:</label>
-        <input type="text" id="nameInput" placeholder="Nama Anda" />
-        <button onclick="fillName()">Kirim</button>
-    </section>
+    header {
+            background-color: #2c3e50;
+            color: white;
+        }
 
-    <section id="profile">
-        <h2>Profil Sekolah</h2>
-        <p>Sekolah kami berdiri sejak tahun 1990 dengan visi mencerdaskan generasi bangsa dan misi memberikan pendidikan berkualitas dan berkarakter.</p>
-        <h3>Visi & Misi</h3>
-        <ul>
-            <li>Visi: Menjadi sekolah unggulan di bidang akademik dan karakter.</li>
-            <li>Misi: Mendidik siswa dengan ilmu pengetahuan dan nilai-nilai moral.</li>
-        </ul>
-    </section>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+        }
 
-    <section id="achievement">
-        <h2>Prestasi</h2>
-        <p>Telah meraih banyak prestasi, baik di bidang akademik maupun non akademik</p>
-        <h3>Beberapa prestasi yang dicapai yaitu</h3>
-        <ul>
-            <li>* Juara O2SN tingkat Kabupaten dan Propinsi</li>
-            <li>* Juara cerdas cermat peringatan Hari Lingkungan Hidup Sedunia</li>
-            <li>* Juara fashion show Hari Lingkungan Hidup Sedunia</li>
-            <li>* Juara Cabang Olahraga sepatu roda tingkat Provinsi</li>
-            <li>* Juara Cabang Olahraga karate tingkat Kabupaten</li>
-        </ul>
-    </section>
+        .navbar img {
+            height: 50px;
+        }
 
-    <section id="contact">
-        <h2>Hubungi Kami</h2>
-        <form id="contactForm" onsubmit="return validateForm()">
-            <label for="name">Nama:</label>
-            <input type="text" id="name" name="name" placeholder="Nama lengkap" />
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="contoh@mail.com" />
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-            <label for="phone">Nomor Telepon:</label>
-            <input type="tel" id="phone" name="phone" placeholder="081234567890" />
+        .tagline {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            font-size: 1.1em;
+        }
 
-            <label for="message">Pesan:</label>
-            <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..."></textarea>
+        /* Section Umum */
+        section {
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
 
-            <button type="submit">Kirim Pesan</button>
-        </form>
+        h2 {
+            color: #2c3e50;
+        }
 
-        <div id="formResult"></div>
-    </section>
+        /* Formulir */
+        form {
+            margin-top: 20px;
+        }
 
-    <script src="js/script.js"></script>
-    </main>
+        label {
+            display: block;
+            margin-top: 15px;
+        }
 
-    <!-- Footer Content -->
-    <footer></footer>
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        footer h2 {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div>
+            <img src="https://via.placeholder.com/50x50?text=Logo" alt="Logo Sekolah">
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#profile">Our Profile</a>
+            <a href="#achievement">Achievement</a>
+            <a href="#message">Message Us</a>
+        </nav>
+    </div>
+    <div class="tagline">
+        Menjadi Sekolah Unggulan dalam Pendidikan Berkualitas
+    </div>
+</header>
+
+<section id="home">
+    <h2>Selamat Datang di Sekolah Maju Jaya</h2>
+    <p>Kami menyediakan lingkungan belajar yang mendukung serta tenaga pengajar profesional. Kami percaya bahwa setiap siswa memiliki potensi luar biasa untuk berkembang.</p>
+</section>
+
+<section id="profile">
+    <h2>Our Profile</h2>
+    <p>Sekolah Maju Jaya adalah institusi pendidikan yang berkomitmen untuk mencetak generasi penerus bangsa yang cerdas, berakhlak, dan berdaya saing global. Kami menyediakan berbagai program unggulan akademik dan non-akademik.</p>
+</section>
+
+<section id="achievement">
+    <h2>Achievement</h2>
+    <ul>
+        <li>Juara 1 Olimpiade Sains Tingkat Nasional 2024</li>
+        <li>Peraih Sekolah Adiwiyata Mandiri 2023</li>
+        <li>Tim Futsal Juara Regional 2024</li>
+    </ul>
+</section>
+
+<footer id="message">
+    <h2>Message Us</h2>
+    <form onsubmit="return validateMessageForm()">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name">
+        <div id="nameError" class="error"></div>
+
+        <label for="birthdate">Tanggal Lahir:</label>
+        <input type="date" id="birthdate" name="birthdate">
+        <div id="birthdateError" class="error"></div>
+
+        <label>Jenis Kelamin:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+            <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+        </div>
+        <div id="genderError" class="error"></div>
+
+        <label for="messageText">Isi Pesan:</label>
+        <textarea id="messageText" name="messageText" rows="5"></textarea>
+        <div id="messageTextError" class="error"></div>
+
+        <button type="submit">Kirim</button>
+    </form>
+</footer>
+
+<script>
+    function validateMessageForm() {
+        let valid = true;
+
+        const name = document.getElementById("name").value.trim();
+        const birthdate = document.getElementById("birthdate").value.trim();
+        const gender = document.querySelector('input[name="gender"]:checked');
+        const messageText = document.getElementById("messageText").value.trim();
+
+        const nameError = document.getElementById("nameError");
+        const birthdateError = document.getElementById("birthdateError");
+        const genderError = document.getElementById("genderError");
+        const messageTextError = document.getElementById("messageTextError");
+
+        nameError.textContent = "";
+        birthdateError.textContent = "";
+        genderError.textContent = "";
+        messageTextError.textContent = "";
+
+        if (name === "") {
+            nameError.textContent = "Nama wajib diisi.";
+            valid = false;
+        }
+
+        if (birthdate === "") {
+            birthdateError.textContent = "Tanggal lahir wajib diisi.";
+            valid = false;
+        }
+
+        if (!gender) {
+            genderError.textContent = "Silakan pilih jenis kelamin.";
+            valid = false;
+        }
+
+        if (messageText.length < 10) {
+            messageTextError.textContent = "Pesan minimal 10 karakter.";
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+
 </body>
 </html>
