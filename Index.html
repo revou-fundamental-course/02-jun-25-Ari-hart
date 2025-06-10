@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,61 @@
 
 </head>
 <body>
+
     <!-- Header Content -->
-    <header></header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#profile">Profil Kami</a></li>
+                <li><a href="#contact">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
     
     <!-- Main Content -->
-    <main></main>
+    <main>
+            <section id="home" class="banner">
+        <h1>Selamat Datang di Sekolah Kami</h1>
+        <p>Hi <span id="userName">Tamu</span>!</p>
+        <label for="nameInput">Masukkan Nama Anda untuk menyapa:</label>
+        <input type="text" id="nameInput" placeholder="Nama Anda" />
+        <button onclick="fillName()">Kirim</button>
+    </section>
+
+    <section id="profile">
+        <h2>Profil Sekolah</h2>
+        <p>Sekolah kami berdiri sejak tahun 1990 dengan visi mencerdaskan generasi bangsa dan misi memberikan pendidikan berkualitas dan berkarakter.</p>
+        <h3>Visi & Misi</h3>
+        <ul>
+            <li>Visi: Menjadi sekolah unggulan di bidang akademik dan karakter.</li>
+            <li>Misi: Mendidik siswa dengan ilmu pengetahuan dan nilai-nilai moral.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Hubungi Kami</h2>
+        <form id="contactForm" onsubmit="return validateForm()">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" placeholder="Nama lengkap" />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="contoh@mail.com" />
+
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" placeholder="081234567890" />
+
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..."></textarea>
+
+            <button type="submit">Kirim Pesan</button>
+        </form>
+
+        <div id="formResult"></div>
+    </section>
+
+    <script src="js/script.js"></script>
+    </main>
 
     <!-- Footer Content -->
     <footer></footer>
