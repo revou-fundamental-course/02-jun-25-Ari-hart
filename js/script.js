@@ -20,9 +20,16 @@
         return false;
       }
 
-      const output = `Nama: ${nama}<br>Tanggal Lahir: ${tanggal}<br>Jenis Kelamin: ${gender}<br>Pesan: ${pesan}`;
+      const waktu = new Date().toLocaleString();
+      const output = `
+        <strong>Waktu Submit:</strong> ${waktu}<br>
+        <strong>Nama:</strong> ${nama}<br>
+        <strong>Tanggal Lahir:</strong> ${tanggal}<br>
+        <strong>Jenis Kelamin:</strong> ${gender}<br>
+        <strong>Pesan:</strong> ${pesan}
+      `;
       document.getElementById("outputData").innerHTML = output;
-      updateTime();
+      document.getElementById("currentTime").textContent = waktu;
       return true;
     }
 
