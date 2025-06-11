@@ -1,9 +1,3 @@
-    function displayGreeting() {
-      const name = document.getElementById("nameInput").value;
-      const greeting = name ? `Hi ${name}` : "Hi";
-      document.getElementById("greeting").textContent = greeting;
-    }
-    
     function updateTime() {
       const now = new Date();
       document.getElementById("currentTime").textContent = now.toLocaleString();
@@ -11,7 +5,7 @@
 
     function validateForm(event) {
       event.preventDefault();
-      const nama = document.getElementById("nameInput").value.trim();
+      const nama = document.getElementById("nama").value.trim();
       const tanggal = document.getElementById("tanggal").value;
       const gender = document.getElementById("gender").value;
       const pesan = document.getElementById("pesan").value.trim();
@@ -53,4 +47,15 @@
         index = (index + 1) % images.length;
         images[index].classList.add("active");
       }, 3000);
+    }
+
+    function submitName() {
+      const name = document.getElementById("modalNameInput").value.trim();
+      if (name) {
+        document.getElementById("greeting").textContent = `Hi ${name}`;
+        document.getElementById("nameModal").style.display = "none";
+        updateTime();
+      } else {
+        alert("Silakan masukkan nama Anda.");
+      }
     }
