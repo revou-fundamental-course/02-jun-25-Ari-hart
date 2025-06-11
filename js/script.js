@@ -1,6 +1,6 @@
     function displayGreeting() {
       const name = document.getElementById("nameInput").value;
-      document.getElementById("greeting").textContent = "Hi " + name;
+      document.getElementById("greeting").textContent = "Hi ";
     }
 
     function updateTime() {
