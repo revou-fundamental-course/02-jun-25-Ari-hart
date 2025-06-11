@@ -3,17 +3,14 @@
     header img { height: 50px; }
     nav a { color: white; margin-left: 20px; text-decoration: none; }
     .banner { width: 100%; overflow: hidden; position: relative; height: 300px; }
-    .banner img { width: 100%; height: 300px; object-fit: cover; position: absolute; animation: slide 9s infinite; }
-    @keyframes slide {
-      0% { opacity: 1; }
-      33% { opacity: 0; }
-      66% { opacity: 0; }
-      100% { opacity: 1; }
-    }
+    .banner img { width: 100%; height: 300px; object-fit: cover; display: none; position: absolute; }
+    .banner img.active { display: block; }
     .profile { padding: 20px; }
     footer { display: flex; justify-content: space-between; padding: 20px; background-color: #f0f0f0; }
     .footer-box { width: 48%; border: 1px solid #ccc; padding: 15px; }
     .form-group { margin-bottom: 10px; }
     .form-group label { display: block; margin-bottom: 5px; }
     .form-group input, .form-group textarea { width: 100%; padding: 5px; }
-    .gender-button { margin-right: 10px; }
+    .gender-button-group { display: flex; gap: 10px; }
+    .gender-button-group button { padding: 5px 10px; border: 1px solid #ccc; background-color: #fff; cursor: pointer; }
+    .gender-button-group button.active { background-color: #004080; color: #fff; }
