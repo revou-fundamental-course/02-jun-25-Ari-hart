@@ -1,4 +1,4 @@
-    function updateTime() {
+     function updateTime() {
       const now = new Date();
       document.getElementById("currentTime").textContent = now.toLocaleString();
     }
@@ -57,5 +57,12 @@
         updateTime();
       } else {
         alert("Silakan masukkan nama Anda.");
+      }
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        submitName();
       }
     }
