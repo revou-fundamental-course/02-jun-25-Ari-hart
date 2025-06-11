@@ -1,37 +1,27 @@
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("enterBtn").addEventListener("click", enterWebsite);
-  });
-
-  function updateTime() {
-    const now = new Date();
-    document.getElementById("currentTime").innerText = now.toLocaleString();
-  }
-  setInterval(updateTime, 1000);
-  updateTime();
-
-  function validateForm() {
-    const name = document.getElementById("name").value;
-    const dob = document.getElementById("dob").value;
-    const gender = document.querySelector('input[name="gender"]:checked');
-    const message = document.getElementById("message").value;
-
-    if (!name || !dob || !gender || !message) {
-      alert("Please fill in all fields.");
-      return false;
+    function displayGreeting() {
+      const name = document.getElementById("nameInput").value;
+      document.getElementById("greeting").textContent = "Hi " + name;
     }
 
-    const output = `Name: ${name}<br>Date of Birth: ${dob}<br>Gender: ${gender.value}<br>Message: ${message}`;
-    document.getElementById("output").innerHTML = output;
-    return false;
-  }
-
-  function enterWebsite() {
-    const userName = document.getElementById("userNameInput").value.trim();
-    if (userName) {
-      document.getElementById("intro-screen").style.display = "none";
-      document.getElementById("main-content").style.display = "block";
-      document.getElementById("greeting").innerHTML = `<div class='greeting-name'>Hi, ${userName}</div>`;
-    } else {
-      alert("Silakan masukkan nama Anda terlebih dahulu.");
+    function updateTime() {
+      const now = new Date();
+      document.getElementById("currentTime").textContent = now.toLocaleString();
     }
-  }
+
+    function validateForm(event) {
+      event.preventDefault();
+      const nama = document.getElementById("nama").value.trim();
+      const tanggal = document.getElementById("tanggal").value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const pesan = document.getElementById("pesan").value.trim();
+
+      if (!nama || !tanggal || !gender || !pesan) {
+        alert("Harap lengkapi semua data!");
+        return false;
+      }
+
+      const output = `Nama: ${nama}<br>Tanggal Lahir: ${tanggal}<br>Jenis Kelamin: ${gender.value}<br>Pesan: ${pesan}`;
+      document.getElementById("outputData").innerHTML = output;
+      updateTime();
+      return true;
+    }
