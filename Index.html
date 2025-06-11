@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="css\style.css"
 
 </head>
-<body onload="updateTime(); startSlideshow();">
+<body onload="startSlideshow();">
   <div id="nameModal">
     <div id="nameModalContent">
       <label for="modalNameInput">Masukkan nama Anda:</label><br>
-      <input type="text" id="modalNameInput">
+      <input type="text" id="modalNameInput" onkeypress="handleKeyPress(event)">
       <br><br>
       <button onclick="submitName()">Submit</button>
     </div>
@@ -80,6 +80,12 @@
       <h3>Current Time</h3>
       <p id="currentTime"></p>
       <h3>Data Anda</h3>
+      <h3>Nama:</h3>
+      <h3>Tanggal Lahir:</h3>
+      <h3>Jenis Kelamin:</h3>
+      <h3>Pesan:</h3>
+
+
       <div id="outputData"></div>
     </div>
   </footer>
