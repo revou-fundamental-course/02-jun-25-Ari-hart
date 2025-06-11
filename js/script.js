@@ -1,8 +1,9 @@
     function displayGreeting() {
       const name = document.getElementById("nameInput").value;
-      document.getElementById("greeting").textContent = "Hi ";
+      const greeting = name ? `Hi ${name}` : "Hi";
+      document.getElementById("greeting").textContent = greeting;
     }
-
+    
     function updateTime() {
       const now = new Date();
       document.getElementById("currentTime").textContent = now.toLocaleString();
@@ -10,7 +11,7 @@
 
     function validateForm(event) {
       event.preventDefault();
-      const nama = document.getElementById("nama").value.trim();
+      const nama = document.getElementById("nameInput").value.trim();
       const tanggal = document.getElementById("tanggal").value;
       const gender = document.getElementById("gender").value;
       const pesan = document.getElementById("pesan").value.trim();
